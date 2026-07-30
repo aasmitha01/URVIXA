@@ -1,0 +1,291 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --urvixa-primary-green: #2E8B57;
+  --urvixa-secondary-green: #15803D;
+  --urvixa-light-green: #DFF8E7;
+  --urvixa-light-blue: #E0F2FE;
+  --urvixa-ice-blue: #0284C7;
+  --urvixa-sky-blue: #0369A1;
+  --urvixa-accent-blue: #0284C7;
+  --urvixa-bg: #F0FDF4;
+  --urvixa-accent-green: #15803D;
+  --urvixa-dark-text: #020617;
+  --urvixa-dark-shade: #0F172A;
+  --urvixa-muted-text: #1E293B;
+}
+
+.dark {
+  --urvixa-bg: #030712;
+  --urvixa-dark-text: #FFFFFF;
+  --urvixa-muted-text: #E2E8F0;
+}
+
+.theme-yellow {
+  --urvixa-bg: #FEFCE8;
+  --urvixa-dark-text: #451A03;
+  --urvixa-muted-text: #78350F;
+}
+
+* {
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Inter', system-ui, sans-serif;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--urvixa-bg);
+  color: var(--urvixa-dark-text);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-weight: 400;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(217, 119, 6, 0.6); border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(217, 119, 6, 0.9); }
+
+/* High-Contrast Accessible System Components */
+@layer components {
+  .card, .glass-card {
+    background: #FFFFFF;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1.5px solid rgba(15, 23, 42, 0.15);
+    border-radius: 24px;
+    box-shadow: 0 12px 36px 0 rgba(15, 23, 42, 0.08);
+    transition: all 0.25s ease-in-out;
+    color: #020617;
+  }
+
+  .dark .card, .dark .glass-card {
+    background: #0F172A;
+    background: rgba(15, 23, 42, 0.95);
+    border: 1.5px solid rgba(56, 189, 248, 0.35);
+    box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 0.6);
+    color: #FFFFFF;
+  }
+
+  .theme-yellow .card, .theme-yellow .glass-card {
+    background: #FEFCE8;
+    background: rgba(254, 252, 232, 0.96);
+    border: 1.5px solid rgba(217, 119, 6, 0.35);
+    box-shadow: 0 12px 36px 0 rgba(180, 83, 9, 0.1);
+    color: #451A03;
+  }
+
+  .card:hover, .glass-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(2, 132, 199, 0.4);
+    box-shadow: 0 20px 48px -4px rgba(15, 23, 42, 0.15);
+  }
+
+  .dark .card:hover, .dark .glass-card:hover {
+    border-color: rgba(56, 189, 248, 0.65);
+    box-shadow: 0 24px 60px 0 rgba(0, 0, 0, 0.8);
+  }
+
+  .theme-yellow .card:hover, .theme-yellow .glass-card:hover {
+    border-color: rgba(217, 119, 6, 0.6);
+  }
+
+  /* Frosted Glass Panel */
+  .glass-panel {
+    background: #FFFFFF;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1.5px solid rgba(15, 23, 42, 0.15);
+    border-radius: 24px;
+    box-shadow: 0 16px 40px 0 rgba(15, 23, 42, 0.1);
+    color: #020617;
+  }
+
+  .glass-card-tahoe {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(28px) saturate(190%);
+    -webkit-backdrop-filter: blur(28px) saturate(190%);
+    border: 1.5px solid rgba(255, 255, 255, 0.6);
+    border-radius: 28px;
+    box-shadow: 0 24px 60px -12px rgba(15, 23, 42, 0.12), 0 8px 24px -4px rgba(21, 128, 61, 0.08);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .dark .glass-card-tahoe {
+    background: rgba(9, 15, 26, 0.82);
+    backdrop-filter: blur(28px) saturate(190%);
+    -webkit-backdrop-filter: blur(28px) saturate(190%);
+    border: 1.5px solid rgba(255, 255, 255, 0.12);
+    border-radius: 28px;
+    box-shadow: 0 32px 80px -16px rgba(0, 0, 0, 0.8), 0 0 40px 0 rgba(21, 128, 61, 0.15);
+  }
+
+  .dark .glass-panel {
+    background: #0F172A;
+    background: rgba(15, 23, 42, 0.95);
+    border: 1.5px solid rgba(56, 189, 248, 0.4);
+    box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 0.7);
+    color: #FFFFFF;
+  }
+
+  .theme-yellow .glass-panel {
+    background: #FEFCE8;
+    background: rgba(254, 252, 232, 0.96);
+    border: 1.5px solid rgba(217, 119, 6, 0.4);
+    color: #451A03;
+  }
+
+  /* macOS Tahoe Sidebar Navigation */
+  .glass-sidebar {
+    background: #F0FDF4;
+    background: rgba(240, 253, 244, 0.96);
+    border-right: 1.5px solid rgba(15, 23, 42, 0.15);
+    box-shadow: 8px 0 32px 0 rgba(15, 23, 42, 0.06);
+  }
+
+  .dark .glass-sidebar {
+    background: #090D16;
+    background: rgba(9, 13, 22, 0.96);
+    border-right: 1.5px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 10px 0 40px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  .theme-yellow .glass-sidebar {
+    background: #FEF08A;
+    background: rgba(254, 240, 138, 0.96);
+    border-right: 1.5px solid rgba(217, 119, 6, 0.3);
+  }
+
+  /* macOS Header Navbar */
+  .glass-header {
+    background: #F0FDF4;
+    background: rgba(240, 253, 244, 0.95);
+    border-bottom: 1.5px solid rgba(15, 23, 42, 0.12);
+  }
+
+  .dark .glass-header {
+    background: #090D16;
+    background: rgba(9, 13, 22, 0.95);
+    border-bottom: 1.5px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .theme-yellow .glass-header {
+    background: #FEF08A;
+    background: rgba(254, 240, 138, 0.95);
+    border-bottom: 1.5px solid rgba(217, 119, 6, 0.3);
+  }
+
+  /* Accessible Buttons */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold text-white transition-all duration-200 cursor-pointer;
+    background: linear-gradient(135deg, #15803D 0%, #0284C7 100%);
+    box-shadow: 0 6px 20px 0 rgba(2, 132, 199, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .theme-yellow .btn-primary {
+    background: linear-gradient(135deg, #D97706 0%, #15803D 100%);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px 0 rgba(2, 132, 199, 0.5);
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-4 py-2.5 text-sm font-semibold transition-all duration-200 cursor-pointer;
+    color: #020617;
+    background: #FFFFFF;
+    border: 1.5px solid rgba(15, 23, 42, 0.2);
+  }
+
+  .dark .btn-ghost {
+    color: #FFFFFF;
+    background: #1E293B;
+    border: 1.5px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .theme-yellow .btn-ghost {
+    color: #451A03;
+    background: #FEFCE8;
+    border: 1.5px solid rgba(217, 119, 6, 0.35);
+  }
+
+  /* Accessible Inputs */
+  .input {
+    @apply w-full rounded-2xl px-4 py-3.5 text-sm font-medium text-[#020617] placeholder-[#334155] outline-none transition-all duration-200;
+    background: #FFFFFF;
+    border: 1.5px solid rgba(15, 23, 42, 0.2);
+  }
+
+  .dark .input {
+    color: #FFFFFF;
+    background: #0F172A;
+    border: 1.5px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .theme-yellow .input {
+    color: #451A03;
+    background: #FEFCE8;
+    border: 1.5px solid rgba(217, 119, 6, 0.35);
+  }
+
+  /* Accessible Nav Items */
+  .nav-item {
+    @apply flex items-center gap-3.5 rounded-2xl px-4 py-3 text-sm font-semibold transition-all duration-200 cursor-pointer;
+    color: #1E293B;
+  }
+
+  .dark .nav-item {
+    color: #E2E8F0;
+  }
+
+  .theme-yellow .nav-item {
+    color: #78350F;
+  }
+
+  .theme-yellow .nav-item.active {
+    background: linear-gradient(135deg, rgba(217, 119, 6, 0.2) 0%, rgba(245, 158, 11, 0.25) 100%);
+    color: #451A03;
+    border: 1.5px solid #D97706;
+  }
+}
+
+/* Strict Clean PDF Print Styles for Prescription Sheet Only */
+@media print {
+  body * {
+    visibility: hidden !important;
+  }
+
+  #printable-prescription,
+  #printable-prescription * {
+    visibility: visible !important;
+  }
+
+  #printable-prescription {
+    position: fixed !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 28px !important;
+    background: #FFFFFF !important;
+    color: #000000 !important;
+    border: 2px solid #15803D !important;
+    box-shadow: none !important;
+    border-radius: 12px !important;
+    z-index: 999999 !important;
+  }
+
+  .print\:hidden {
+    display: none !important;
+  }
+}

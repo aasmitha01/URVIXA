@@ -1,0 +1,152 @@
+[
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$ULNvP0wZtpqtA7kmtMNufY$u7GiL/JXE+tvl758u+YEHS+97wmTSMidbphES1LipLc=",
+    "last_login": null,
+    "is_superuser": true,
+    "username": "farmer_demo",
+    "first_name": "",
+    "last_name": "",
+    "email": "farmer@agrisense.ai",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-07-30T14:06:28.551Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$8vu3L7oNRGJSfHixpRbrDF$Dx8idxdLenBi/mfotZn/yvK6wJK4mp92INgEKTXa/WM=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "ani077256",
+    "first_name": "",
+    "last_name": "",
+    "email": "ani077256@gmai.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-07-30T14:17:49.378Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "api.profile",
+  "pk": "0ac45784-4cb6-40a0-88a9-11e00aa0f25a",
+  "fields": {
+    "user": 2,
+    "full_name": "Ani",
+    "mobile": null,
+    "village": null,
+    "district": null,
+    "language": "English",
+    "avatar_url": null,
+    "created_at": "2026-07-30T14:17:49.491Z"
+  }
+},
+{
+  "model": "api.profile",
+  "pk": "200cf7d5-af49-490f-be70-48b5ee2e6582",
+  "fields": {
+    "user": 1,
+    "full_name": "Ramesh Kumar",
+    "mobile": "+91 98765 43210",
+    "village": "Chandapur",
+    "district": "Medak",
+    "language": "English",
+    "avatar_url": null,
+    "created_at": "2026-07-30T14:06:28.652Z"
+  }
+},
+{
+  "model": "api.farm",
+  "pk": "1d93a3a7-3870-4ca6-bd25-dab292738c68",
+  "fields": {
+    "user": 1,
+    "name": "Green Meadows Parcel A",
+    "survey_no": "SY-104/B",
+    "village": "Chandapur",
+    "district": "Medak",
+    "area_acres": "5.50",
+    "soil_type": "Black Cotton Soil",
+    "crop": "Tomato",
+    "stage": "Vegetative",
+    "planting_date": null,
+    "created_at": "2026-07-30T14:06:28.654Z"
+  }
+},
+{
+  "model": "api.soilreport",
+  "pk": "b8fce308-d393-4e5a-a258-cd2d4f7f72e0",
+  "fields": {
+    "farm": "1d93a3a7-3870-4ca6-bd25-dab292738c68",
+    "user": 1,
+    "ph": "6.80",
+    "nitrogen": "140.00",
+    "phosphorus": "42.00",
+    "potassium": "210.00",
+    "organic_carbon": "0.75",
+    "report_data": {
+      "recommendation": "Add 25kg Organic Compost & NPK 19-19-19",
+      "status": "Optimal"
+    },
+    "generated_at": "2026-07-30T14:06:28.655Z"
+  }
+},
+{
+  "model": "api.diseaseanalysis",
+  "pk": "422c5dbe-7db9-4c6b-811b-f62c505c9a30",
+  "fields": {
+    "user": 1,
+    "crop": "Tomato",
+    "image_url": null,
+    "disease_name": "Early Blight (Tomato)",
+    "severity": "Medium",
+    "confidence": "94.50",
+    "affected_area": "15% of foliage",
+    "symptoms": "Concentric ring lesions on lower leaves",
+    "treatment": "Apply Copper Fungicide or Mancozeb 75% WP every 7-10 days.",
+    "prevention": "Crop rotation, drip irrigation to reduce leaf wetness.",
+    "created_at": "2026-07-30T14:06:28.656Z"
+  }
+},
+{
+  "model": "api.communitypost",
+  "pk": "339abf4d-1944-41d0-88a2-2ce4b24adfb8",
+  "fields": {
+    "user": 1,
+    "type": "question",
+    "title": "Best organic remedy for tomato leaf curl?",
+    "content": "Has anyone tried neem oil spray for leaf curl virus in monsoon season? Looking for advice on concentration.",
+    "likes": 12,
+    "created_at": "2026-07-30T14:06:28.657Z"
+  }
+},
+{
+  "model": "api.communitycomment",
+  "pk": "ed743212-b98d-4cf5-8cbf-840f5f19a904",
+  "fields": {
+    "post": "339abf4d-1944-41d0-88a2-2ce4b24adfb8",
+    "user": 1,
+    "content": "Neem oil 5ml/L with mild soap solution works well as a preventative measure!",
+    "created_at": "2026-07-30T14:06:28.658Z"
+  }
+},
+{
+  "model": "api.notification",
+  "pk": "655ce96b-d0b2-44cf-8797-4e77ae0c9507",
+  "fields": {
+    "user": 1,
+    "type": "info",
+    "title": "Soil Test Report Ready",
+    "message": "Your soil test analysis for Green Meadows Parcel A is complete.",
+    "is_read": false,
+    "created_at": "2026-07-30T14:06:28.659Z"
+  }
+}
+]
